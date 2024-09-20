@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="MyDialog" dlg:left="103" dlg:top="56" dlg:width="174" dlg:height="137" dlg:closeable="true" dlg:moveable="true">
- <dlg:bulletinboard>
-  <dlg:textfield dlg:id="textBox" dlg:tab-index="0" dlg:left="5" dlg:top="7" dlg:width="161" dlg:height="101" dlg:value="Enter Here"/>
- </dlg:bulletinboard>
-</dlg:window>
