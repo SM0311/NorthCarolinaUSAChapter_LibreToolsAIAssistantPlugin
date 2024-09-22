@@ -7,19 +7,18 @@
    <dlg:radio dlg:id="Simple" dlg:tab-index="1" dlg:left="198" dlg:top="52" dlg:width="40" dlg:height="13" dlg:value="Simple" dlg:group-name="dialog"/>
    <dlg:radio dlg:id="Concise" dlg:tab-index="2" dlg:left="198" dlg:top="72" dlg:width="47" dlg:height="18" dlg:value="Concise" dlg:group-name="dialog"/>
   </dlg:radiogroup>
-  <dlg:text dlg:id="PersonPerspective" dlg:tab-index="4" dlg:left="196" dlg:top="90" dlg:width="56" dlg:height="13" dlg:value="Person Perspective"/>
+  <dlg:text dlg:id="PersonPerspective" dlg:tab-index="4" dlg:left="196" dlg:top="85" dlg:width="56" dlg:height="13" dlg:value="Person Perspective"/>
   <dlg:text dlg:id="DialogType" dlg:tab-index="3" dlg:left="194" dlg:top="12" dlg:width="63" dlg:height="13" dlg:value="Dialog Type"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="First" dlg:tab-index="5" dlg:left="198" dlg:top="102" dlg:width="49" dlg:height="15" dlg:value="First" dlg:group-name="person"/>
-   <dlg:radio dlg:id="Third" dlg:tab-index="6" dlg:left="198" dlg:top="120" dlg:width="47" dlg:height="15" dlg:value="Third Person" dlg:group-name="person"/>
-   </dlg:radiogroup>
-   <dlg:radiogroup>
-   <dlg:radio dlg:id="Active" dlg:tab-index="7" dlg:left="198" dlg:top="150" dlg:width="58" dlg:height="20" dlg:value="Active" dlg:group-name="voice"/>
-   <dlg:radio dlg:id="OptionButton2" dlg:tab-index="9" dlg:left="196" dlg:top="163" dlg:width="0" dlg:height="3" dlg:value="OptionButton2"/>
-   <dlg:radio dlg:id="Passive" dlg:tab-index="8" dlg:left="198" dlg:top="168" dlg:width="52" dlg:height="15" dlg:value="Passive" dlg:group-name="voice"/>
+   <dlg:radio dlg:id="First" dlg:tab-index="5" dlg:left="198" dlg:top="106" dlg:width="49" dlg:height="15" dlg:value="First" dlg:group-name="person"/>
+   <dlg:radio dlg:id="Third" dlg:tab-index="6" dlg:left="198" dlg:top="124" dlg:width="47" dlg:height="15" dlg:value="Third Person" dlg:group-name="person"/>
   </dlg:radiogroup>
-  <dlg:textfield dlg:id="TextBox" dlg:tab-index="10" dlg:left="17" dlg:top="17" dlg:width="159" dlg:height="172" dlg:multiline="true" dlg:value="Enter Here"/>
-  <dlg:text dlg:id="Label1" dlg:tab-index="11" dlg:left="30" dlg:top="196" dlg:width="134" dlg:height="13" dlg:value="Push Escape to Write"/>
-  <dlg:text dlg:id="voice" dlg:tab-index="12" dlg:left="198" dlg:top="134" dlg:width="56" dlg:height="13" dlg:value="Voice"/>
+  <dlg:textfield dlg:id="TextBox" dlg:tab-index="7" dlg:left="17" dlg:top="17" dlg:width="159" dlg:height="172" dlg:multiline="true" dlg:value="Enter Here"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="8" dlg:left="30" dlg:top="196" dlg:width="134" dlg:height="13" dlg:value="Push Escape to Write"/>
+  <dlg:text dlg:id="voice" dlg:tab-index="9" dlg:left="198" dlg:top="138" dlg:width="56" dlg:height="13" dlg:value="Voice"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="Active" dlg:tab-index="10" dlg:left="196" dlg:top="153" dlg:width="61" dlg:height="12" dlg:value="Active" dlg:group-name="voice"/>
+   <dlg:radio dlg:id="Passive" dlg:tab-index="11" dlg:left="196" dlg:top="170" dlg:width="66" dlg:height="13" dlg:value="Passive" dlg:group-name="voice"/>
+  </dlg:radiogroup>
  </dlg:bulletinboard>
 </dlg:window>
