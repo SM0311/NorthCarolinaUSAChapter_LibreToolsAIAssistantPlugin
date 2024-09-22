@@ -39,10 +39,12 @@ def write_to_desktop(filename, content):
     with open(desktop_path, 'w', encoding='utf-8') as file:
         file.write(content)
 
-def PythonApi(prompt, length_option, perspective_option):
+def PythonApi(prompt, length_option, perspective_option, voice_type):
     """Generates content from LMStudio, considering length and perspective, and writes it to a file on the desktop"""
     
-    modified_prompt = f"{perspective_option.capitalize()} perspective and {length_option.lower()} text: {prompt}"
+    modified_prompt = f"""{perspective_option.capitalize()} perspective 
+            and {length_option.lower()} text and {voice_type.lower()} voice: {prompt}"""
+            
     lm_output = get_lmstudio_output(modified_prompt)
     
     filename = "lmstudio_output.txt"
