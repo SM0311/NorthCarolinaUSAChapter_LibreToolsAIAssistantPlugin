@@ -106,8 +106,8 @@ def main(*args):
     # Unpack all four elements from result
     prompt, length_option, perspective_option, voice_type = result
     
-    if prompt and length_option and perspective_option:  # If inputs are not empty, process them
-        PythonApi(prompt, length_option, perspective_option)
+    if prompt and length_option and perspective_option and voice_type:  # If inputs are not empty, process them
+        PythonApi(prompt, length_option, perspective_option, voice_type)
 
 # Call the main process
 main()
