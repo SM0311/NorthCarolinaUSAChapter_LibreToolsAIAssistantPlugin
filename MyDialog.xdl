@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
-<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="MyDialog" dlg:left="152" dlg:top="99" dlg:width="268" dlg:height="215" dlg:closeable="true" dlg:moveable="true">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="MyDialog" dlg:left="152" dlg:top="99" dlg:width="245" dlg:height="240" dlg:closeable="true" dlg:moveable="true">
  <dlg:bulletinboard>
-  <!-- Dialog Type Group -->
-  <dlg:radiogroup>
-   <dlg:radio dlg:id="Expanded" dlg:tab-index="0" dlg:left="198" dlg:top="32" dlg:width="45" dlg:height="13" dlg:value="Expanded" dlg:group-name="dialog"/>
-   <dlg:radio dlg:id="Simple" dlg:tab-index="1" dlg:left="198" dlg:top="52" dlg:width="40" dlg:height="13" dlg:value="Simple" dlg:group-name="dialog"/>
-   <dlg:radio dlg:id="Concise" dlg:tab-index="2" dlg:left="198" dlg:top="72" dlg:width="47" dlg:height="18" dlg:value="Concise" dlg:group-name="dialog"/>
-  </dlg:radiogroup>
-  <dlg:text dlg:id="DialogType" dlg:tab-index="3" dlg:left="194" dlg:top="12" dlg:width="63" dlg:height="13" dlg:value="Dialog Type"/>
+  <!--Left column  -->
+ <dlg:text dlg:id="PortLabel" dlg:tab-index="0" dlg:left="15" dlg:top="10" dlg:width="70" dlg:height="13" dlg:value="Port Number:"/>
+  <dlg:textfield dlg:id="PortTextBox" dlg:tab-index="1" dlg:left="90" dlg:top="10" dlg:width="70" dlg:height="13" dlg:value="1234"/>
   
-  <!-- Person Perspective Group -->
-  <dlg:text dlg:id="PersonPerspective" dlg:tab-index="4" dlg:left="194" dlg:top="97" dlg:width="63" dlg:height="13" dlg:value="Person Perspective"/>
+  <dlg:textfield dlg:id="TextBox" dlg:tab-index="4" dlg:left="15" dlg:top="30" dlg:width="140" dlg:height="165" dlg:multiline="true" dlg:value="Enter text here ..."/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="5" dlg:left="15" dlg:top="210" dlg:width="140" dlg:height="13" dlg:value="Push Escape to write"/>
+  
+  <!-- Right column -->
+  <dlg:text dlg:id="DialogType" dlg:tab-index="6" dlg:left="170" dlg:top="10" dlg:width="60" dlg:height="13" dlg:value="Dialog Type"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="First" dlg:tab-index="5" dlg:left="198" dlg:top="115" dlg:width="49" dlg:height="15" dlg:value="First" dlg:group-name="person"/>
-   <dlg:radio dlg:id="Third" dlg:tab-index="6" dlg:left="198" dlg:top="133" dlg:width="47" dlg:height="15" dlg:value="Third Person" dlg:group-name="person"/>
+   <dlg:radio dlg:id="Expanded" dlg:tab-index="7" dlg:left="170" dlg:top="30" dlg:width="60" dlg:height="13" dlg:value="Expanded" dlg:group-name="dialog"/>
+   <dlg:radio dlg:id="Simple" dlg:tab-index="8" dlg:left="170" dlg:top="50" dlg:width="60" dlg:height="13" dlg:value="Simple" dlg:group-name="dialog"/>
+   <dlg:radio dlg:id="Concise" dlg:tab-index="9" dlg:left="170" dlg:top="70" dlg:width="60" dlg:height="13" dlg:value="Concise" dlg:group-name="dialog"/>
   </dlg:radiogroup>
-
-  <!-- Voice Type Group -->
-  <dlg:text dlg:id="VoiceType" dlg:tab-index="7" dlg:left="194" dlg:top="150" dlg:width="63" dlg:height="13" dlg:value="Voice Type"/>
+ 
+  <dlg:text dlg:id="PersonPerspective" dlg:tab-index="10" dlg:left="170" dlg:top="100" dlg:width="60" dlg:height="13" dlg:value="Person Perspective"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="Active" dlg:tab-index="8" dlg:left="198" dlg:top="168" dlg:width="49" dlg:height="15" dlg:value="Active" dlg:group-name="voice"/>
-   <dlg:radio dlg:id="Passive" dlg:tab-index="9" dlg:left="198" dlg:top="186" dlg:width="47" dlg:height="15" dlg:value="Passive" dlg:group-name="voice"/>
+   <dlg:radio dlg:id="First" dlg:tab-index="11" dlg:left="170" dlg:top="120" dlg:width="60" dlg:height="13" dlg:value="First" dlg:group-name="person"/>
+   <dlg:radio dlg:id="Third" dlg:tab-index="12" dlg:left="170" dlg:top="140" dlg:width="60" dlg:height="13" dlg:value="Third Person" dlg:group-name="person"/>
   </dlg:radiogroup>
-
-  <dlg:textfield dlg:id="TextBox" dlg:tab-index="10" dlg:left="17" dlg:top="17" dlg:width="159" dlg:height="172" dlg:multiline="true" dlg:value="Enter Here"/>
-  <dlg:text dlg:id="Label1" dlg:tab-index="11" dlg:left="30" dlg:top="196" dlg:width="134" dlg:height="13" dlg:value="Push Escape to Write"/>
- </dlg:bulletinboard>
+ 
+  <dlg:text dlg:id="VoiceType" dlg:tab-index="13" dlg:left="170" dlg:top="170" dlg:width="60" dlg:height="13" dlg:value="Voice Type"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="Active" dlg:tab-index="14" dlg:left="170" dlg:top="190" dlg:width="60" dlg:height="13" dlg:value="Active" dlg:group-name="voice"/>
+   <dlg:radio dlg:id="Passive" dlg:tab-index="15" dlg:left="170" dlg:top="210" dlg:width="60" dlg:height="13" dlg:value="Passive" dlg:group-name="voice"/>
+  </dlg:radiogroup>
+ 
+</dlg:bulletinboard>
 </dlg:window>

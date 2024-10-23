@@ -5,31 +5,11 @@ import urllib.request
 import json
 import os
 
-
-def get_downloaded_models():
-    """Function to get the list of all downloaded models from LM Studio"""
-    lmstudio_url = 'http://localhost:1234/v1/models'  # Adjust the URL and port as needed
-
-    try:
-        with urllib.request.urlopen(lmstudio_url) as response:
-            if response.status == 200:
-                response_data = response.read()
-                json_response = json.loads(response_data)
-
-                models = [model['id'] for model in json_response['data']]
-                return models
-            else:
-                return ['Error retrieving models: {}'.format(response.status)]
-    except Exception as e:
-        return ['Exception occurred: {}'.format(str(e))]
-
-
-def get_lmstudio_output(prompt, model):
+def get_lmstudio_output(prompt, port):
     """Function to get output from LMStudio using a specific model"""
-    lmstudio_url = 'http://localhost:1234/v1/chat/completions'  # Adjust the URL and port as needed
+    lmstudio_url = f"http://localhost:{port}/v1/chat/completions"
 
     payload = json.dumps({
-        "model": model,  # Use the selected model
         "messages": [
             {
                 "role": "user",
@@ -61,18 +41,18 @@ def write_to_desktop(filename, content):
         file.write(content)
 
 
-def PythonApi(prompt, length_option, perspective_option, voice_type, model):
+def PythonApi(prompt, length_option, perspective_option, voice_type,  port):
     """Generates content from LMStudio using the selected model and writes it to a file"""
 
     modified_prompt = f"""{perspective_option.capitalize()} perspective 
-            and {length_option.lower()} text and {voice_type.lower()} voice: {prompt}"""
+           and {length_option.lower()} text and {voice_type.lower()} voice: {prompt}"""
 
-    lm_output = get_lmstudio_output(modified_prompt, model)
+    lm_output = get_lmstudio_output(modified_prompt, port)
 
     filename = "lmstudio_output.txt"
     write_to_desktop(filename, lm_output)
 
-    desktop = XSCRIPTCONTEXT.getDesktop()
+    desktop = XSCRIPTCONTEXT.getDesktop() # type: ignore  # noqa: F821
     model = desktop.getCurrentComponent()
 
     if not hasattr(model, "Text"):
@@ -92,15 +72,16 @@ def create_input_dialog():
 
     dialog = dialog_provider.createDialog("vnd.sun.star.script:Standard.MyDialog?language=Basic&location=application")
 
-    prompt_list = [None, None, None, None, None]  # TextBox, DialogType, PersonPerspective, VoiceType, Model
+    prompt_list = [None, None, None, None, None]  # TextBox, DialogType, PersonPerspective, VoiceType, Port
 
-    # Populate the list of models in the ListBox
-    models = get_downloaded_models()
-    model_list_box = dialog.getControl("ModelListBox")
-    model_list_box.addItems(tuple(models), 0)  # Add all models to the list box
-
+    # Get the default port (from the PortTextBox)
+    port_text_box = dialog.getControl("PortTextBox")
+    user_port = port_text_box.getText()  # Get the default port or user-defined port from the dialog
+    
     # Execute the dialog
     dialog.execute()
+
+    print(f"User port: {user_port}")
 
     text_box = dialog.getControl("TextBox")
     prompt_list[0] = text_box.getText()  # Get text from the input field
@@ -125,10 +106,8 @@ def create_input_dialog():
     elif dialog.getControl("Passive").getModel().State == 1:
         prompt_list[3] = "Passive"
 
-    # Get the selected model from the ListBox
-    selected_model_index = model_list_box.getSelectedItemPos()
-    if selected_model_index != -1:
-        prompt_list[4] = models[selected_model_index]  # Get the selected model
+    # Get the port number from the PortTextBox
+    prompt_list[4] = port_text_box.getText()  # Store the port entered by the user
 
     dialog.endExecute()  # Close the dialog
 
@@ -140,10 +119,10 @@ def main(*args):
     result = create_input_dialog()  # Wait for input
 
     # Unpack all five elements from result
-    prompt, length_option, perspective_option, voice_type, model = result
+    prompt, length_option, perspective_option, voice_type, port = result
 
-    if prompt and length_option and perspective_option and voice_type and model:  # If inputs are not empty, process them
-        PythonApi(prompt, length_option, perspective_option, voice_type, model)
+    if prompt and length_option and perspective_option and voice_type and port:  # If inputs are not empty, process them
+        PythonApi(prompt, length_option, perspective_option, voice_type, port)
 
 
 # Call the main process
