@@ -56,7 +56,6 @@ Once installed, launch LibreTools, navigate to the plugins section, and activate
 
 
 
-
 ### Usage
 
 After installation, the AI Assistant Plugin can be accessed directly within LibreTools. The assistant can help with the following tasks:
