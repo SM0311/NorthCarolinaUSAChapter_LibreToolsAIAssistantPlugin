@@ -48,10 +48,9 @@ Open the terminal and navigate to the directory containing the .deb file.
 
 Run the following command to install:
 
-''' bash 
+``` bash 
 sudo dpkg -i libretools-ai-assistant-plugin.deb 
-
-'''
+```
 
 Once installed, launch LibreTools, navigate to the plugins section, and activate the AI Assistant Plugin.
 
